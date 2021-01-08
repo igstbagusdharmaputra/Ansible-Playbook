@@ -1,0 +1,4 @@
+dbuser: dharma
+dbpass: password
+dbname: db_housy
+ssh_name: id_rsa

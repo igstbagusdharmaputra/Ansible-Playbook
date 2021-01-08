@@ -1,0 +1,13 @@
+- hosts: dharmafrontend:dharmaprivate
+  tasks:
+          - name: frontend
+            docker_container:
+                name: fe
+                state: stopped
+
+- hosts: dharmabackend
+  tasks:
+          - name: backend
+            docker_container:
+                name: be
+                state: stopped

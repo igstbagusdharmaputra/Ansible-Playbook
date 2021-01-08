@@ -1,0 +1,6 @@
+- hosts: all
+  tasks:
+          - name: node exporter
+            docker_container:
+                name: nodeexporter
+                state: stopped

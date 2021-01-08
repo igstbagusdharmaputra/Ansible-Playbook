@@ -1,0 +1,12 @@
+- hosts: dharmacicd
+  tasks:
+    - name: Run Jenkins container
+      docker_container:
+        name: cicd
+        image: jenkins/jenkins:lts
+        state: started
+        ports: 
+           - "8080:8080"
+           - "50000:50000"
+        volumes:
+           - "/home/{{ansible_user}}/jenkins_home:/usr/app"

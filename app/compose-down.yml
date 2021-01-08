@@ -1,0 +1,14 @@
+- hosts: dharmafrontend:dharmaprivate
+  tasks:  
+     - name: compose up fe
+       shell:
+          cmd: "docker-compose down"
+          chdir: "/home/{{ansible_user}}/housy-fe"    
+- hosts: dharmabackend
+  tasks:
+     - name: compose up be  
+       shell:
+          cmd: "docker-compose down"
+          chdir: "/home/{{ansible_user}}/housy-be"
+
+

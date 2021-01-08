@@ -1,0 +1,6 @@
+- hosts: dharmacicd
+  tasks:
+          - name: cicd
+            docker_container:
+                name: cicd
+                state: stopped

@@ -1,0 +1,28 @@
+- hosts: dharmafrontend:dharmaprivate
+  tasks:
+     - name: run housy-fe
+       docker_container:
+             name: fe
+             image: dharmatkj/housy-fe-alpine:latest
+             ports:
+                - "3000:3000"
+             interactive : yes
+             detach: true
+             state: started
+
+- hosts: dharmabackend
+  tasks:
+     - name: run housy-be
+       docker_container:
+             name: be
+             image: dharmatkj/housy-be-alpine:latest
+             ports:
+                - "3000:3000"
+             detach: true
+             state: started
+
+#- hosts: dharmacicd
+#  tasks:
+#          - name: run jenkins
+#            command: docker run -p 8080:8080 -p 50000:50000 -d -v jenkins_home:/usr/app jenkins/jenkins:lts
+
