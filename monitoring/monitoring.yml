@@ -13,9 +13,9 @@
     - name: mkdir grafana
       file:
         path: /home/ps/grafana
-        mode: 777
-        owner: ps
-        group: ps
+        mode: 0777
+        owner: root
+        group: root
         state: directory
 
     - name: run prometheus
@@ -38,4 +38,5 @@
         detach: yes
         volumes:
              - "/home/ps/grafana:/var/lib/grafana"
+             - "/home/ps/grafana/grafana.ini:/etc/grafana/grafana.ini"
         state: started

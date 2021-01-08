@@ -1,0 +1,10 @@
+- hosts: dharmamonitoring
+  tasks:
+          - name: grafana
+            docker_container:
+                name: grafana
+                state: absent
+          - name: prometheus
+            docker_container:
+                 name: prometheus
+                 state: absent
