@@ -1,0 +1,10 @@
+certbot_create_if_missing: false
+certbot_create_method: standalone
+certbot_admin_email: dharmatkjone@gmail.com
+certbot_create_standalone_stop_services:
+  - nginx
+apache_vhosts:
+    - {servername: "dharma.instructype.com", documentroot: "/etc/nginx/sites-enabled/frontend.conf"}
+    - {servername: "api.dharma.instructype.com", documentroot: "/etc/nginx/sites-enabled/backend.conf"}
+    - {servername: "cicd.dharma.instructype.com", documentroot: "/etc/nginx/sites-enabled/jenkins.conf"}
+    - {servername: "monitoring.dharma.instructype.com", documentroot: "/etc/nginx/sites-enabled/monitoring.conf"}
