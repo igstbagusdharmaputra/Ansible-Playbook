@@ -13,8 +13,9 @@
     - name: mkdir grafana
       file:
         path: /home/ps/grafana
-        owner: 472
-        group: 472
+        mode: 777
+        owner: ps
+        group: ps
         state: directory
 
     - name: run prometheus
