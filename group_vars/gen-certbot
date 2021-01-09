@@ -1,0 +1,8 @@
+certbot_package: "python3-certbot-nginx"
+certbot_plugin: "nginx"
+certbot_mail_address: dharmatkjone@gmail.com
+certbot_site_names:
+    - dharma.instructype.com
+    - api.dharma.instructype.com
+    - cicd.dharma.instructype.com
+    - monitoring.dharma.instructype.com
