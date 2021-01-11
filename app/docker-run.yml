@@ -17,7 +17,7 @@
              name: be
              image: dharmatkj/housy-be-alpine:latest
              ports:
-                - "3000:3000"
+                - "5000:5000"
              detach: true
              state: started
 
