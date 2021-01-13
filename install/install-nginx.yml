@@ -1,4 +1,4 @@
-- hosts: dharmapublic
+- hosts: public
   tasks:
           - name: install nginx
             apt:

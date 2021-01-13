@@ -1,8 +1,4 @@
-- hosts: dharmaprivate:dharmafrontend:dharmabackend
-#  gather_facts: no
-#  remote_user: "{{ansible_user}}"
-#  become: true
-#  gather_facts: false
+- hosts: be:fe
   tasks:
           - debug:
               msg: "{{ansible_user}}"

@@ -1,16 +1,24 @@
-- hosts: dharmafrontend:dharmaprivate
+- hosts: fe
   tasks:
           - name: frontend
             docker_container:
                 name: fe
-                image: dharmatkj/housy-fe-alpine:latest
+                image: dharmatkj/housy-fe:latest
                 ports:
                   - "3000:3000"
                 interactive : yes
                 detach: true
-                state: started              
-
-- hosts: dharmabackend
+                state: started               
+          - name: frontend1
+            docker_container:
+                name: fe1
+                image: dharmatkj/housy-fe:latest
+                ports:
+                  - "3002:3000"
+                interactive : yes
+                detach: true
+                state: started
+- hosts: be
   tasks:
           - name: backend
             docker_container:

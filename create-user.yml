@@ -1,10 +1,10 @@
 # Create new user 
-- hosts: dharmapublic
+- hosts: public
   tasks:
           - name: "create users nginx"
             user:
                     name: public
-                    password: "$6$7FpOHcrYkSX$8hUe1sL.aZW5Z4LxKATr3wyY.meyAxt//8ZF6PMsF0VfeIjZYorWAk2gYp5q2sUoFo2kj6qIObvA01Q2dzo19."
+                    password: "$6$TFgqeZEX1ixn9.8V$7XefK4Vgd7k5a/vRn5PaRScQ7IYn6sMUQphqANllFUVm31xQ8kbWeVwOkUPvW1qoqj051vDrlC1GeK/KAwn2l0"
                     groups: sudo,docker
                     state: present
                     shell: /bin/bash
@@ -12,12 +12,12 @@
                     createhome: yes
                     home: /home/public
 
-- hosts: dharmadb
+- hosts: db
   tasks:
           - name: "create users database"
             user:
                     name: db
-                    password: "$6$7FpOHcrYkSX$8hUe1sL.aZW5Z4LxKATr3wyY.meyAxt//8ZF6PMsF0VfeIjZYorWAk2gYp5q2sUoFo2kj6qIObvA01Q2dzo19."
+                    password: "$6$TFgqeZEX1ixn9.8V$7XefK4Vgd7k5a/vRn5PaRScQ7IYn6sMUQphqANllFUVm31xQ8kbWeVwOkUPvW1qoqj051vDrlC1GeK/KAwn2l0"
                     groups: sudo,docker
                     state: present
                     shell: /bin/bash
@@ -25,12 +25,12 @@
                     createhome: yes
                     home: /home/db
 
-- hosts: dharmabackend
+- hosts: be
   tasks:
           - name: "create users backend"
             user:
                     name: be
-                    password: "$6$7FpOHcrYkSX$8hUe1sL.aZW5Z4LxKATr3wyY.meyAxt//8ZF6PMsF0VfeIjZYorWAk2gYp5q2sUoFo2kj6qIObvA01Q2dzo19."
+                    password: "$6$TFgqeZEX1ixn9.8V$7XefK4Vgd7k5a/vRn5PaRScQ7IYn6sMUQphqANllFUVm31xQ8kbWeVwOkUPvW1qoqj051vDrlC1GeK/KAwn2l0"
                     groups: sudo,docker
                     state: present
                     shell: /bin/bash
@@ -39,57 +39,44 @@
                     home: /home/be
 
 
-- hosts: dharmaprivate
+- hosts: fe
   tasks:
-          - name: "create users frontend1"
+          - name: "create users frontend"
             user:
-                    name: fe1
-                    password: "$6$7FpOHcrYkSX$8hUe1sL.aZW5Z4LxKATr3wyY.meyAxt//8ZF6PMsF0VfeIjZYorWAk2gYp5q2sUoFo2kj6qIObvA01Q2dzo19."
+                    name: fe
+                    password: "$6$TFgqeZEX1ixn9.8V$7XefK4Vgd7k5a/vRn5PaRScQ7IYn6sMUQphqANllFUVm31xQ8kbWeVwOkUPvW1qoqj051vDrlC1GeK/KAwn2l0"
                     groups: sudo,docker
                     state: present
                     shell: /bin/bash
                     system: no
                     createhome: yes
-                    home: /home/fe1
+                    home: /home/fe
 
-- hosts: dharmafrontend
-  tasks:
-          - name: "create users frontend2"
-            user:
-                    name: fe2
-                    password: "$6$7FpOHcrYkSX$8hUe1sL.aZW5Z4LxKATr3wyY.meyAxt//8ZF6PMsF0VfeIjZYorWAk2gYp5q2sUoFo2kj6qIObvA01Q2dzo19."
-                    groups: sudo,docker
-                    state: present
-                    shell: /bin/bash
-                    system: no
-                    createhome: yes
-                    home: /home/fe2
-
-- hosts: dharmacicd
+- hosts: cicd
   tasks:
           - name: "create users jenkins"
             user:
-                    name: jk
-                    password: "$6$7FpOHcrYkSX$8hUe1sL.aZW5Z4LxKATr3wyY.meyAxt//8ZF6PMsF0VfeIjZYorWAk2gYp5q2sUoFo2kj6qIObvA01Q2dzo19."
+                    name: cicd
+                    password: "$6$TFgqeZEX1ixn9.8V$7XefK4Vgd7k5a/vRn5PaRScQ7IYn6sMUQphqANllFUVm31xQ8kbWeVwOkUPvW1qoqj051vDrlC1GeK/KAwn2l0"
                     groups: sudo,docker
                     state: present
                     shell: /bin/bash
                     system: no
                     createhome: yes
-                    home: /home/jk
+                    home: /home/cicd
                     
-- hosts: dharmamonitoring
+- hosts: mn
   tasks:
           - name: "create users monitoring"
             user:
-                    name: ps
-                    password: "$6$7FpOHcrYkSX$8hUe1sL.aZW5Z4LxKATr3wyY.meyAxt//8ZF6PMsF0VfeIjZYorWAk2gYp5q2sUoFo2kj6qIObvA01Q2dzo19."
+                    name: mn
+                    password: "$6$TFgqeZEX1ixn9.8V$7XefK4Vgd7k5a/vRn5PaRScQ7IYn6sMUQphqANllFUVm31xQ8kbWeVwOkUPvW1qoqj051vDrlC1GeK/KAwn2l0"
                     groups: sudo,docker
                     state: present
                     shell: /bin/bash
                     system: no
                     createhome: yes
-                    home: /home/ps
+                    home: /home/mn
                     
 # Change PasswordAuthentication and rload sshd
 - hosts: all

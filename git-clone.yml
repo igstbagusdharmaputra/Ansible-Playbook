@@ -1,19 +1,19 @@
-- hosts: dharmabackend
+- hosts: be
   tasks:
           - name: git clone
             git:
-                    repo: git@github.com:igstbagusdharmaputra/backend-private.git
-                    version: main
+                    repo: git@github.com:igstbagusdharmaputra/housy-be.git
+                    version: production
                     dest: "/home/{{ansible_user}}/housy-be/"
                     accept_hostkey: yes
             become_user: "{{ansible_user}}"
                     
-- hosts: dharmaprivate:dharmafrontend 
+- hosts: fe 
   tasks:
           - name: git clone
             git:
-                    repo: git@github.com:igstbagusdharmaputra/frontend-private.git
-                    version: main
-                    dest: ~/housy-fe/
+                    repo: git@github.com:igstbagusdharmaputra/housy-fe.git
+                    version: production
+                    dest: "/home/{{ansible_user}}/housy-fe/"
                     accept_hostkey: yes
             become_user: "{{ansible_user}}"

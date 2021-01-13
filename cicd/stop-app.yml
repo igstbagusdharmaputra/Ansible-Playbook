@@ -1,4 +1,4 @@
-- hosts: dharmacicd
+- hosts: cicd
   tasks:
           - name: cicd
             docker_container:

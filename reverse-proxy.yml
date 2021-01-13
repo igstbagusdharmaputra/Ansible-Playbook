@@ -1,35 +1,35 @@
-- hosts: dharmapublic
+- hosts: public
   tasks:
     - name: copy reverse proxy frontend
       copy:
         src: frontend.conf
         dest: /etc/nginx/sites-enabled/frontend.conf
-        owner: public
-        group: public
+        owner: devops
+        group: devops
         mode: 755
 
     - name: copy reverse proxy backend
       copy:
         src: backend.conf
         dest: /etc/nginx/sites-enabled/backend.conf
-        owner: public
-        group: public
+        owner: devops
+        group: devops
         mode: 755
 
     - name: copy reverse proxy jenkins
       copy:
         src: jenkins.conf
         dest: /etc/nginx/sites-enabled/jenkins.conf
-        owner: public
-        group: public
+        owner: devops
+        group: devops
         mode: 755
 
     - name: copy reverse proxy monitoring
       copy:
         src: monitoring.conf
         dest: /etc/nginx/sites-enabled/monitoring.conf
-        owner: public
-        group: public
+        owner: devops
+        group: devops
         mode: 755
 
     - name: restart nginx

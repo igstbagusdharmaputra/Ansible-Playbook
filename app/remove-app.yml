@@ -3,15 +3,15 @@
           - name: frontend
             docker_container:
                 name: fe
-                state: stopped
+                state: absent
           - name: frontend1
             docker_container:
                 name: fe1
-                state: stopped
+                state: absent
 
 - hosts: be
   tasks:
           - name: backend
             docker_container:
                 name: be
-                state: stopped
+                state: absent

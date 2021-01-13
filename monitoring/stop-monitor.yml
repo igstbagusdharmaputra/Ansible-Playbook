@@ -1,4 +1,4 @@
-- hosts: dharmamonitoring
+- hosts: mn
   tasks:
           - name: grafana
             docker_container:

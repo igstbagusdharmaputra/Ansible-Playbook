@@ -1,18 +1,18 @@
-- hosts: dharmamonitoring
+- hosts: mn
   tasks:
     - name: mkdir docker
       file:
-        path: /home/ps/prometheus
+        path: /home/devops/prometheus
         state: directory
 
     - name: copy prometheus conf
       copy:
         src: ../files/prometheus.yml
-        dest: /home/ps/prometheus/prometheus.yml
+        dest: /home/devops/prometheus/prometheus.yml
 
     - name: mkdir grafana
       file:
-        path: /home/ps/grafana
+        path: /home/devops/grafana
         mode: 0777
         owner: root
         group: root
@@ -23,7 +23,7 @@
         name: prometheus
         image: prom/prometheus
         volumes:
-             - "/home/ps/prometheus:/etc/prometheus"
+             - "/home/devops/prometheus:/etc/prometheus"
         ports:
              - "9090:9090"
         detach: yes
@@ -37,6 +37,6 @@
              - "3000:3000"
         detach: yes
         volumes:
-             - "/home/ps/grafana:/var/lib/grafana"
-             - "/home/ps/grafana/grafana.ini:/etc/grafana/grafana.ini"
+             - "/home/devops/grafana:/var/lib/grafana"
+             - "/home/devops/grafana/grafana.ini:/etc/grafana/grafana.ini"
         state: started
